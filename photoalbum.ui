@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PhotoAlbum</class>
+ <widget class="QMainWindow" name="PhotoAlbum">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>788</width>
+    <height>534</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PhotoAlbum</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="edit_description" native="true">
+    <property name="geometry">
+     <rect>
+      <x>397</x>
+      <y>9</y>
+      <width>382</width>
+      <height>222</height>
+     </rect>
+    </property>
+    <widget class="QDialogButtonBox" name="edit_buttons">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>182</y>
+       <width>176</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>9</y>
+       <width>231</width>
+       <height>113</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="0">
+       <widget class="QLabel" name="location_label">
+        <property name="text">
+         <string>Location:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="date_input"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="description_label">
+        <property name="text">
+         <string>Description:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="date_label">
+        <property name="text">
+         <string>Date:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="location_input"/>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="description_input"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="image_info_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>380</y>
+      <width>761</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="date">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>9</y>
+       <width>369</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="location">
+     <property name="geometry">
+      <rect>
+       <x>384</x>
+       <y>9</y>
+       <width>368</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="description">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>28</y>
+       <width>743</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="image">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>65</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="balance_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>331</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="balance_preview">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>311</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>321</width>
+       <height>72</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="balance_label">
+        <property name="text">
+         <string>Brightness:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="balance_spinbox">
+        <property name="minimum">
+         <number>-255</number>
+        </property>
+        <property name="maximum">
+         <number>255</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QSlider" name="balance_slider">
+        <property name="minimum">
+         <number>-255</number>
+        </property>
+        <property name="maximum">
+         <number>255</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QDialogButtonBox" name="balance_buttons">
+        <property name="standardButtons">
+         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="confirm_save" native="true">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>250</y>
+      <width>721</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>701</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="confirm_label">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QDialogButtonBox" name="confirm_buttons">
+        <property name="standardButtons">
+         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <zorder>balance_widget</zorder>
+   <zorder>image</zorder>
+   <zorder>image_info_widget</zorder>
+   <zorder>edit_description</zorder>
+   <zorder>confirm_save</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>788</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_As"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionAdd_Photo"/>
+    <addaction name="Delete_Photo"/>
+    <addaction name="actionEdit_Description"/>
+    <addaction name="actionPage_Forward"/>
+    <addaction name="actionPage_Backward"/>
+    <addaction name="actionMove_Forward"/>
+    <addaction name="actionMove_Backward"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionUsage"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuIamge">
+    <property name="title">
+     <string>Image</string>
+    </property>
+    <widget class="QMenu" name="menuBalance">
+     <property name="title">
+      <string>Balance</string>
+     </property>
+     <addaction name="actionContrast"/>
+     <addaction name="actionBrightness"/>
+    </widget>
+    <addaction name="actionCrop"/>
+    <addaction name="actionResize"/>
+    <addaction name="actionRotate"/>
+    <addaction name="menuBalance"/>
+    <addaction name="actionNegate"/>
+    <addaction name="actionSmooth"/>
+    <addaction name="actionSharpen"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuIamge"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle">
+    <string/>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionCrop"/>
+   <addaction name="actionAdd_Photo"/>
+   <addaction name="Delete_Photo"/>
+   <addaction name="separator"/>
+   <addaction name="actionPage_Backward"/>
+   <addaction name="actionPage_Forward"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="font">
+    <font>
+     <italic>true</italic>
+    </font>
+   </property>
+  </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/new.png</normaloff>../icons/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/open.png</normaloff>../icons/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/save.png</normaloff>../icons/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="text">
+    <string>Save As</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAdd_Photo">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/plus-sign.png</normaloff>../icons/plus-sign.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Photo</string>
+   </property>
+  </action>
+  <action name="Delete_Photo">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/minus-sign.png</normaloff>../icons/minus-sign.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Photo</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionEdit_Description">
+   <property name="text">
+    <string>Edit Description</string>
+   </property>
+  </action>
+  <action name="actionPage_Forward">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/arrow-right.png</normaloff>../icons/arrow-right.png</iconset>
+   </property>
+   <property name="text">
+    <string>Page Forward</string>
+   </property>
+   <property name="shortcut">
+    <string>Right</string>
+   </property>
+  </action>
+  <action name="actionPage_Backward">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/arrow-left.png</normaloff>../icons/arrow-left.png</iconset>
+   </property>
+   <property name="text">
+    <string>Page Backward</string>
+   </property>
+   <property name="shortcut">
+    <string>Left</string>
+   </property>
+  </action>
+  <action name="actionMove_Forward">
+   <property name="text">
+    <string>Move Forward</string>
+   </property>
+  </action>
+  <action name="actionMove_Backward">
+   <property name="text">
+    <string>Move Backward</string>
+   </property>
+  </action>
+  <action name="actionCrop">
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/crop.png</normaloff>../icons/crop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Crop</string>
+   </property>
+  </action>
+  <action name="actionResize">
+   <property name="text">
+    <string>Resize</string>
+   </property>
+  </action>
+  <action name="actionRotate">
+   <property name="text">
+    <string>Rotate</string>
+   </property>
+  </action>
+  <action name="actionContrast">
+   <property name="text">
+    <string>Contrast</string>
+   </property>
+  </action>
+  <action name="actionBrightness">
+   <property name="text">
+    <string>Brightness</string>
+   </property>
+  </action>
+  <action name="actionUsage">
+   <property name="text">
+    <string>Usage</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionNegate">
+   <property name="text">
+    <string>Negate</string>
+   </property>
+  </action>
+  <action name="actionSmooth">
+   <property name="text">
+    <string>Smooth</string>
+   </property>
+  </action>
+  <action name="actionSharpen">
+   <property name="text">
+    <string>Sharpen</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>balance_slider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>balance_spinbox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>537</x>
+     <y>354</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>354</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>balance_spinbox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>balance_slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>359</x>
+     <y>354</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>537</x>
+     <y>354</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
